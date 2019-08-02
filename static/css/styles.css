@@ -1,0 +1,58 @@
+html {
+    scroll-behavior: smooth;
+  }
+  body{
+  font-family: 'Nunito', sans-serif;
+  }
+  
+  a, u {
+      text-decoration: none !important;
+  }
+  
+  .navbar{
+      margin: 0;
+      padding: 0;
+      background-color: whitesmoke;
+  }
+  .brand-size{
+      font-size: 14px;
+  }
+  
+  .search{
+      margin-left: -900%;
+  }
+  
+  .nav-title{
+      font-size: 24px;
+      font-weight: 900;
+  }
+  
+  .nav-font{
+      font-size: 14px;
+  }
+  .centered{
+      margin-left: 56%;
+  }
+  .submit-color{
+      background-color: #27DEAC;
+  }
+  .submit-color:hover{
+      background-color: #36C59E;
+      transition: 2.2s;
+  }
+  
+  .custom-pad{
+      border-right: 10px;
+  }
+  
+  .upper-text{
+      font-size: 14.5px;
+      font-weight: 550;
+  }
+  
+  .feather-16{
+      width: 16px;
+      height: 16px;
+  }
+  
+  
