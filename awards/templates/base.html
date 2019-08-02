@@ -1,0 +1,90 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	{%if title%}
+
+	<title>{{title}}</title>
+	{% endif %}
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	{% block styles %}
+	{% bootstrap_css %}
+	{% endblock %}
+
+	<link rel="stylesheet" href="/static/css/styles.css">
+	<link rel="stylesheet" href="/static/css/sidebar.css">
+	<link rel="stylesheet" href="/static/css/animate.css">
+	<link rel="stylesheet" href="/static/css/index.css">
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+
+<!--	navbar -->
+{% include "navbar.html" %}
+<!--	end of navbar-->
+
+
+
+
+<!--	block content -->
+
+{% block content %} {% endblock %}
+
+
+<!--	end of block content-->
+<div id="main">
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">REGISTER NOW</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <div class="row text-center">
+	  	<div class="col-md-6">
+		   <a href="/accounts/login" class="btn btn-outline-primary" role="button">Login</a>
+		</div>
+		<div class="col-md-6">
+		  <a href="/accounts/register" class="btn btn-outline-success" role="button">Register</a>
+		 </div> 
+	</div>
+		  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="fixed-bottom"  >
+	<div class="container" style='background-color: grey;'>
+
+	</div>
+</footer>
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% bootstrap_javascript %}
+{% endblock %}
+<script>
+      feather.replace()
+</script>
+<script src="/static/js/scripts.js"></script>
+</body>
+
+</html>

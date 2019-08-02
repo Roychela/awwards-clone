@@ -1,0 +1,70 @@
+<!--	First Navbar -->
+<nav class="navbar navbar-light navbar-expand-md justify-content-center">
+    <div class="navbar-brand d-flex w-50 mr-auto brand-size ml-4  font-weight-bold">	<span class="ml-4 py-4">
+	<a class="text-dark" href="#"><span class="border-bottom">ENGLISH </span></a>
+	</span>
+
+    </div>
+    <div class="navbar-collapse collapse w-100">
+        <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link text-dark upper-text" href="#">Ratings for design, creativity and innovation in IPs and projects</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end mr-4">
+            <li class="nav-item">
+                <a class="nav-link icon-fonts" href="#"><i class="feather-16" data-feather="instagram"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="feather-16" data-feather="twitter"></i></a>
+            </li>
+	            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="feather-16" data-feather="facebook"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--
+example 3 - Navbar with brand left, links on center and right that collapse into the vert mobile menu
+-->
+<nav class="navbar navbar-light navbar-expand-md justify-content-center border">
+    <div class="navbar-brand d-flex w-50 mr-auto brand-size ml-4  font-weight-bold"> <ul class="navbar-nav">
+            <li class="nav-item active border-right pr-3" onclick="openNav()">
+                <a class="nav-link brand-size" href="#"><i
+                        class="material-icons pr-3">menu</i><span class="d-flex float-right mt-1">MENU</span></a>
+            </li>
+            <li class="nav-item ml-4 mt-1">
+                <a class="nav-link" href="#"><i
+				    class="material-icons">search</i></a>
+            </li>
+        </ul>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link nav-title text-dark" href="#">Trophiiies</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link nav-font text-dark font-weight-bold p-4 my-2" href="/accounts/register" data-toggle="modal" data-target="#exampleModal">REGISTER/ LOG IN</a>
+            </li>
+            <li class="nav-item submit-color">
+                <a class="nav-link nav-font text-white font-weight-bold p-4 my-2" href="#">SUBMIT YOUR SITE !</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--sidenav-->
+<div id="mySidenav" class="sidenav bg-light ">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style='font-size: 15px;'>CLOSE <strong style='font-size: 36px;' class="ml-1 mt-5"  >&times;</strong></a>
+    <strong><a href="#" class="p-4 border-top border-bottom mt-3 font"style='font-size: 20px;' href="/accounts/register" data-toggle="modal" data-target="#exampleModal" >Register/Login</a></strong>
+  <strong><a href="#" class="p-4 border-bottom font" style='font-size: 20px;' >Home</a></strong>
+  <strong><a href="#" class="p-4 border-bottom" style='font-size: 20px;'>Projects</a></strong>
+  <strong><a href="#" class="p-4 border-bottom" style='font-size: 20px;'>Subscribe</a></strong>
+  <strong><a href="#" class="p-4 border-bottom" style='font-size: 20px;'>Contact</a></strong>
+</div>
