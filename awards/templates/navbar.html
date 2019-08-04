@@ -109,8 +109,8 @@ example 3 - Navbar with brand left, links on center and right that collapse into
 <div id="mySidenav" class="sidenav bg-light ">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style='font-size: 15px;'>CLOSE <strong style='font-size: 36px;' class="ml-1 mt-5"  >&times;</strong></a>
     <strong><a href="#" class="p-4 border-top border-bottom mt-3 font"style='font-size: 20px;' href="/accounts/register" data-toggle="modal" data-target="#exampleModal" >Register/Login</a></strong>
-  <strong><a href="#" class="p-4 border-bottom font" style='font-size: 20px;' >Home</a></strong>
-  <strong><a href="#" class="p-4 border-bottom" style='font-size: 20px;'>Projects</a></strong>
+  <strong><a href="{% url 'welcome'%}" class="p-4 border-bottom font" style='font-size: 20px;' >Home</a></strong>
+  <strong><a href="{% url 'upload_project' %}" class="p-4 border-bottom" style='font-size: 20px;'> Submit Project</a></strong>
   <strong><a href="#" class="p-4 border-bottom" style='font-size: 20px;'>Subscribe</a></strong>
   <strong><a href="#" class="p-4 border-bottom" style='font-size: 20px;'>Contact</a></strong>
 </div>

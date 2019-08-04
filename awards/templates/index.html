@@ -2,17 +2,18 @@
 {% block content %}
 
 <section>
-
-{% for project in projects%}
 <div class="card bg-dark text-white" style="height: 32rem">
   <img src="https://cdn.pixabay.com/photo/2018/02/19/10/36/paper-3164718_960_720.jpg" class="card-img img-fluid" alt="..." style="max-height: 100%;">
   <div class="card-img-overlay">
     <h5 class="card-title"><strong>SITE OF THE DAY</strong></h5>
-    <p class="card-text">{{project.date_posted}}</p>
+    <p class="card-text">August 2019</p>
     <p class="card-text"></p>
   </div>
 </div>
 <hr>
+
+{% for project in projects%}
+
 <div class="row">
   <div class="col-md-4">
   <div class="card text-center p-2 m-2">
