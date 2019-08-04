@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-sm-4">
+            <img src="{{user_new.profile.image.url}}" width="150" height="150" class="rounded-circle border">
+        </div>
+{% for project in projects%}
+{% if project.user_new == user.profile.user %}
+<div class="row">
+  <div class="col-md-4">
+  <div class="card text-center p-2 m-2">
+    <img src={{project.project_image.url}} class="img-fluid">
+      <p class="card-text"><strong>{{project.project_name}}</strong></p>
+    <p class="card-text">{{project.date_posted}}</p>
+     <a class="card-text text-center" href="{{project.project_url}}">Visit site</a>
+     <div class="row">
+        <div class="col-md-6">
+          <img  src="{{project.user_new.profile.image.url}}" width="35" height="35" class="rounded-circle border userimage">
+          
+       </div>
+       <div class="col-md-6">
+           
+       </div>
+      </div>
+   </div> 
+</div>
+{% endif %}
+{% endfor %}
+    
+{% endblock %}
+
+
+ 
