@@ -35,8 +35,18 @@ example 3 - Navbar with brand left, links on center and right that collapse into
                         class="material-icons pr-3">menu</i><span class="d-flex float-right mt-1">MENU</span></a>
             </li>
             <li class="nav-item ml-4 mt-1">
-                <a class="nav-link" href="#"><i
-				    class="material-icons">search</i></a>
+
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Project" name="project">
+            <div class="input-group-btn">
+              <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit"><i class="material-icons">search</i></button>
+            </div>
+          </div>
+
+        </form>
+               
             </li>
         </ul>
     </div>
@@ -49,14 +59,50 @@ example 3 - Navbar with brand left, links on center and right that collapse into
                 <a class="nav-link nav-title text-dark" href="#">Trophiiies</a>
             </li>
         </ul>
+        {% if user.is_authenticated %}
+            <ul class="pr-5">
+              <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle " id="navbarDropdownMenuLink-333" data-toggle="dropdown"  aria-expanded="false">
+                          <span class="caret"></span>
+                           
+            <img src="{{user.profile.image.url}}" width="50" height="50" class="rounded-circle border userimage">
+                      </a>
+                     
+                
+                  
+                  
+                   
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{% url 'welcome'%}">Home</a>
+                  </li>
+                   <li>
+                    <a href="{% url 'upload_project' %}">Submit Project</a>
+                  </li>
+                   <li>
+                    <a href="{% url 'myaccount'%}">Profile</a>
+                  </li>
+                  <li>
+                    <a href="/accounts/password/change">Change Password</a>
+                  </li>
+                   <li>
+                    <a href="{% url 'profile' %}">Edit Profile</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Logout</a>
+                  </li>
+                </ul>
+          
+                {% else %}
         <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
             <li class="nav-item">
                 <a class="nav-link nav-font text-dark font-weight-bold p-4 my-2" href="/accounts/register" data-toggle="modal" data-target="#exampleModal">REGISTER/ LOG IN</a>
             </li>
             <li class="nav-item submit-color">
-                <a class="nav-link nav-font text-white font-weight-bold p-4 my-2" href="#">SUBMIT YOUR SITE !</a>
+                <a class="nav-link nav-font text-white font-weight-bold p-4 my-2" href="{% url 'upload_project' %}">SUBMIT YOUR SITE !</a>
             </li>
         </ul>
+         {% endif %}
     </div>
 </nav>
 <!--sidenav-->
