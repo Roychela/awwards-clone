@@ -14,7 +14,7 @@ class ProjectForm(forms.ModelForm):
         model = Project
         exclude = ('user', )
 
-class ProjectRatingForm(forms.ModelForm):
-    class Meta:
-        model = Rating
-        exclude = ['project', 'pub_date', 'user']
+# class ProjectRatingForm(forms.ModelForm):
+#     class Meta:
+#         model = Rating
+#         exclude = ['project', 'pub_date', 'user']
