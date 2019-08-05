@@ -38,9 +38,8 @@ class Project(models.Model):
     def search_project(cls, name):
         project = Project.objects.filter(project_name__icontains = name)
         return project
-   
 # class Rating(models.Model):
-#     RATING_CHOICES = (
+#     RATINGS = (
 #         (1, '1'),
 #         (2, '2'),
 #         (3, '3'),
@@ -50,11 +49,22 @@ class Project(models.Model):
 #         (7, '7'),
 #         (8, '8'),
 #         (9, '9'),
-#         (10,'10'),
+#         (10, '10')
 #     )
-#     project=models.ForeignKey(Project,on_delete=models.CASCADE)
-#     user=models.ForeignKey(User,on_delete=models.CASCADE)
-#     design_rating = models.IntegerField(choices=RATING_CHOICES,null=True)
-#     usability_rating=models.IntegerField(choices=RATING_CHOICES,null=True)
-#     content_rating=models.IntegerField(choices=RATING_CHOICES,null=True)
-    
+#     project = models.ForeignKey(Project)
+#     pub_date = models.DateTimeField(auto_now=True)
+#     user = models.ForeignKey(User)
+#     usability_rating = models.IntegerField(
+#         default=0, choices=RATINGS, null=True)
+#     design_rating = models.IntegerField(default=0, choices=RATINGS, null=True)
+#     content_rating = models.IntegerField(default=0, choices=RATINGS, null=True)
+#     review = models.CharField(max_length=200)
+
+#     def __str__(self):
+#         return self.review
+
+#     def save_rating(self):
+#         self.save()
+
+#     def delete_rating(self):
+#         self.delete()
