@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{% block content %}
+
+<title>Rating</title>
+{{form.media}}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+<div class="container" style="margin-top:70px;margin-bottom:50px;">
+    <div class="row">
+        <div class="col-md-4 col-sm-3 col-xs-2"></div>
+        <div class="col-md-4 col-sm-6 col-xs-8">
+            <h2 class="text-center">RATING </h2>
+            <br>
+            <form style="border:white" action="{% url 'review' project.id %}" method="post"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+
+                 {% bootstrap_form form%}
+                        <input type="submit" class="btn btn-outline-info btn-sm" value="Rate">
+            </form>
+        </div><br>
+        <div class="col-md-4 col-sm-3 col-xs-2"></div>
+    </div>
+</div>
+{% endblock %}

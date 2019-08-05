@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import  ProfileUpdateForm, ProjectForm
-from .models import Profile, Project
+from .forms import  ProfileUpdateForm, ProjectForm, ProjectRatingForm
+from .models import Profile, Project, Rating
 from django.contrib.auth.models import User
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -100,31 +100,31 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
-# def review_rating(request, id):
-#     current_user = request.user
-#     current_project = Project.objects.get(id=id)
-#     if request.method == 'POST':
-#         form = ProjectRatingForm(request.POST)
-#         if form.is_valid():
-#             rating = form.save(commit=False)
-#             rating.project = current_project
-#             rating.user = current_user
-#             rating.save()
-#             return redirect('project', id)
-#     else:
-#         form = ProjectRatingForm()
+def review_rating(request, id):
+    current_user = request.user
+    current_project = Project.objects.get(id=id)
+    if request.method == 'POST':
+        form = ProjectRatingForm(request.POST)
+        if form.is_valid():
+            rating = form.save(commit=False)
+            rating.project = current_project
+            rating.user = current_user
+            rating.save()
+            return redirect('project', id)
+    else:
+        form = ProjectRatingForm()
 
-#     return render(request, 'rating/rating.html', {'form': form, "project": current_project, "user": current_user})
+    return render(request, 'rating.html', {'form': form, "project": current_project, "user": current_user})
 
-# def single_project(request, c_id):
-#     current_user = request.user
-#     current_project = Project.objects.get(id=c_id)
-#     ratings = Rating.objects.filter(project_id=c_id)
-#     usability = Rating.objects.filter(
-#         project_id=c_id).aggregate(Avg('usability_rating'))
-#     content = Rating.objects.filter(
-#         project_id=c_id).aggregate(Avg('content_rating'))
-#     design = Rating.objects.filter(
-#         project_id=c_id).aggregate(Avg('design_rating'))
-#     return render(request, 'project.html', {"project": current_project, "user": current_user, 'ratings': ratings, "design": design, "content": content, "usability": usability})
+def single_project(request, c_id):
+    current_user = request.user
+    current_project = Project.objects.get(id=c_id)
+    ratings = Rating.objects.filter(project_id=c_id)
+    usability = Rating.objects.filter(
+        project_id=c_id).aggregate(Avg('usability_rating'))
+    content = Rating.objects.filter(
+        project_id=c_id).aggregate(Avg('content_rating'))
+    design = Rating.objects.filter(
+        project_id=c_id).aggregate(Avg('design_rating'))
+    return render(request, 'project.html', {"project": current_project, "user": current_user, 'ratings': ratings, "design": design, "content": content, "usability": usability})
 

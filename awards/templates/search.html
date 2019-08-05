@@ -27,6 +27,9 @@
           <img  src="{{project.user.profile.image.url}}" width="35" height="35" class="rounded-circle border userimage">
           <p class="card-text">BY <strong>{{project.user}}</strong></p>
        </div>
+        <a href="{% url 'review' project.id %}">
+                    <button class="btn btn-outline-success">Rate</button>
+                </a>
      </div>
       </div>
     {% endfor %}

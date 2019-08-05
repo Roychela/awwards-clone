@@ -6,7 +6,7 @@ from django.db.models.signals import post_save
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics')
     bio = models.TextField(default='default')
     @receiver(post_save, sender=User)
     def create_profile(sender, instance, created, **kwargs):
@@ -38,33 +38,33 @@ class Project(models.Model):
     def search_project(cls, name):
         project = Project.objects.filter(project_name__icontains = name)
         return project
-# class Rating(models.Model):
-#     RATINGS = (
-#         (1, '1'),
-#         (2, '2'),
-#         (3, '3'),
-#         (4, '4'),
-#         (5, '5'),
-#         (6, '6'),
-#         (7, '7'),
-#         (8, '8'),
-#         (9, '9'),
-#         (10, '10')
-#     )
-#     project = models.ForeignKey(Project)
-#     pub_date = models.DateTimeField(auto_now=True)
-#     user = models.ForeignKey(User)
-#     usability_rating = models.IntegerField(
-#         default=0, choices=RATINGS, null=True)
-#     design_rating = models.IntegerField(default=0, choices=RATINGS, null=True)
-#     content_rating = models.IntegerField(default=0, choices=RATINGS, null=True)
-#     review = models.CharField(max_length=200)
+class Rating(models.Model):
+    RATINGS = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10')
+    )
+    project = models.ForeignKey(Project)
+    pub_date = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User)
+    usability_rating = models.IntegerField(
+        default=0, choices=RATINGS, null=True)
+    design_rating = models.IntegerField(default=0, choices=RATINGS, null=True)
+    content_rating = models.IntegerField(default=0, choices=RATINGS, null=True)
+    review = models.CharField(max_length=200)
 
-#     def __str__(self):
-#         return self.review
+    def __str__(self):
+        return self.review
 
-#     def save_rating(self):
-#         self.save()
+    def save_rating(self):
+        self.save()
 
-#     def delete_rating(self):
-#         self.delete()
+    def delete_rating(self):
+        self.delete()

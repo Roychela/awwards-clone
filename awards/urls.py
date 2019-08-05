@@ -14,6 +14,8 @@ urlpatterns=[
      url(r'^api/projects/$', views.ProjectList.as_view()),
      url(r'^search/', views.search_results, name='search_results'),
 
+     url(r'^project/(\d+)$', views.single_project, name='project'),
+     url(r'^rating/(\d+)$', views.review_rating, name="review"),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

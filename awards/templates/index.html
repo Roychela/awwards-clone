@@ -22,15 +22,19 @@
       <p class="card-text"><strong>{{project.project_name}}</strong></p>
       <p class="card-text">{{project.date_posted}}</p>
       <a class="card-text text-center" href="{{project.project_url}}">Visit site</a>
+      <hr>
       <div class="row">
           <div class="col-md-6">
             <img  src="{{project.user.profile.image.url}}" width="35" height="35" class="rounded-circle border userimage">
             <p class="card-text">BY <strong>{{project.user}}</strong></p>
           </div>
           <div class="col-md-6">
-           
+            <a href="{% url 'review' project.id %}">
+                    <button class="btn btn-outline-info btn-sm">Rate</button>
+                </a>
           </div>
       </div>
+     
    </div> 
   
 </div>
