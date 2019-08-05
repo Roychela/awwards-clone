@@ -85,9 +85,9 @@ Open [localhost:8000](http://127.0.0.1:8000/)
 
 
 ## LIVE SITE
-Click [Live site]() to view the deployed application
+Click [Live site](https://roy1awwards.herokuapp.com/) to view the deployed application
 ## KNOWN BUGS
-
+None
 
 ## TECHNOLOGIES
 * Python3.6
