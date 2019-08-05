@@ -23,18 +23,20 @@
       <a class="card-text text-center" href="{{project.project_url}}">Visit site</a>
       <div class="row">
           <div class="col-md-6">
-          <img  src="{{project.user.profile.image.url}}" width="35" height="35" class="rounded-circle border userimage">
-          <p class="card-text">BY <strong>{{project.user}}</strong></p>
+            <img  src="{{project.user.profile.image.url}}" width="35" height="35" class="rounded-circle border userimage">
+            <p class="card-text">BY <strong>{{project.user}}</strong></p>
           </div>
           <div class="col-md-6">
            
           </div>
       </div>
    </div> 
-</div>
+   {% endfor %}
 </div>
 
-{% endfor %}
+
+
+
 </section>
 
 
